@@ -1,19 +1,19 @@
 
-# Prajakta Nisal 👩🏻‍💻
+# Seniya Tuscano 👩🏻‍💻
 
 ## Software Engineer | Grad Student | Tech Enthusiast
 
-👩‍💻 Grad student with 2 years of experience at DWS India (Deutsche Bank Group), actively seeking full-time opportunities starting May 2025.
+🌟 Master’s student in Information Systems with hands-on experience at top companies like LTIMindtree and Spider Software Pvt. Ltd. I’m currently seeking full-time roles in Cloud Engineering or Software Development starting May 2025.
 
-💡 Currently exploring the fascinating domain of Distributed Systems.
+💡 Passionate about building scalable systems, I’m diving deep into cloud computing, DevOps, and distributed systems to solve real-world tech challenges.
 
-🎯 Interests: Full-Stack Development | Distributed Systems | Machine Learning | Solving Complex Engineering Problems.
+🎯 Interests: Cloud Solutions Architecture | Full-Stack Development | DevOps | AI/ML | Solving Complex Tech Problems
 
-Outside of tech & work, I love dancing and traveling! ✈️
+✈️ Outside the screen, you'll find me dancing, exploring new cultures, or planning my next travel adventure! ✈
 
 **Let’s Connect:**
-✉️ pkn4111@mavs.uta.edu
-✉️ nisalprajakta99@gmail.com
-📞 (682) 554-5432
+✉️ sxt3855@mavs.uta.edu
+✉️ seniyatuscano3110@gmail.com
+📞 (682) 551-2088
 
-🌎 Want to know more about me? Check out [my portfolio](https://prajaktanisal99.github.io/)!
+🌎 Want to know more about me? Check out [my portfolio]()!
