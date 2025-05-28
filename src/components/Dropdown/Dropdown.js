@@ -8,7 +8,6 @@ const SiderBar = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
-  /* top: 0; */
   left: 0;
   z-index: 999;
   transition: 0.3s ease-in-out;
@@ -28,6 +27,7 @@ const CloseIcon = styled(FaTimes)`
   top: 2rem;
   cursor: pointer;
 `;
+
 export const NavMenu = styled.div`
   display: flex;
   justify-content: center;
@@ -74,7 +74,7 @@ function Dropdown({ isOpen, toggle }) {
       <NavBtn onClick={toggle}>
         <a
           className="btn PrimaryBtn"
-          href="https://linkedin.com/in/prajakta-nisal"
+          href="https://linkedin.com/in/seniya-tuscano" // replace with resume link if available
           target="_blank"
           rel="noopener noreferrer"
         >

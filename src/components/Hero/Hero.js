@@ -21,6 +21,7 @@ function Hero() {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <main>
       <Dropdown isOpen={isOpen} toggle={toggle} />
@@ -31,7 +32,7 @@ function Hero() {
             <ScrollAnimation animateIn="fadeIn">
               <TypeAnimation
                 cursor={false}
-                sequence={["Hi, I'm Prajakta.", () => setShowSubtitle(true)]}
+                sequence={["Hi, I'm Seniya Tuscano.", () => setShowSubtitle(true)]}
                 speed={{ type: "keyStrokeDelayInMs", value: 150 }}
                 wrapper="h1"
                 repeat={0}
@@ -41,36 +42,23 @@ function Hero() {
                   cursor={true}
                   sequence={[
                     500,
+                    "A Cloud Enthusiast.",
+                    500,
                     "A Full-Stack Developer.",
                     500,
-                    "Machine Learning Enthusiast.",
+                    "An AWS & Azure Explorer.",
                     500,
-                    "A problem solver.",
+                    "A Data-Driven Thinker.",
                     500,
-                    "An innovative thinker.",
+                    "A Creative Problem Solver.",
                     500,
-                    "A lifelong learner.",
+                    "A Curious Learner.",
                     500,
-                    "Always growing, always coding.",
+                    "Building solutions that matter.",
                     500,
-                    "A tech explorer.",
-                    500,
-                    "I turn ideas into code.",
-                    500,
-                    "Ok, enough with the titles...",
-                    500,
-                    "You can scroll down to see my projects now...",
+                    "Scroll down to see what I’ve built...",
                     300,
                     () => setShowScrollDown(true),
-                    // 1000,
-                    // "Seriously, my projects are worth checking out!",
-                    // 1000,
-                    // "Still here? Cool, you're awesome.",
-                    // 1000,
-                    // "Alright, time to reset the loop...",
-                    // 1000,
-                    // "Catch you later! :)",
-                    // 500,
                   ]}
                   speed={50}
                   deletionSpeed={65}

@@ -1,25 +1,24 @@
 export const EducationList = [
   {
-    title: "Master of Science, Computer Science",
-    college: "The University of Texas, Arlington",
-    score: "3.89",
+    title: "Master of Science in Information Systems",
+    college: "The University of Texas at Arlington",
+    score: "3.78 GPA",
     courses: [
-      "Design and Analysis of Algorithms",
-      "Distributed Systems",
       "Cloud Computing and Big Data",
-      "Neural Networks",
-      "Data Mining",
+      "Software Engineering",
+      "Data Warehousing and Business Intelligence",
       "Artificial Intelligence",
-      "Secure Programming",
+      "Project Management",
     ],
-    date: "Aug 2023 - May 2025",
-    transcript: "https://drive.google.com/file/d/12iXsB0gMB5s4NqMNUeia8mB82WvmcZLt/view?usp=sharing",
+    date: "Jan 2024 – Dec 2025",
+    transcript:
+      "https://drive.google.com/file/d/12iXsB0gMB5s4NqMNUeia8mB82WvmcZLt/view?usp=sharing",
   },
   {
-    title: "Bachelor of Technology, Computer Science",
-    college: "MKSSSs Cummins College of Engineering for Women, Pune",
-    score: "8.66",
-   courses: [
+    title: "Bachelor of Engineering in Computer Science",
+    college: "Fr. Conceicao Rodrigues College of Engineering , Mumbai, India",
+    score: "8.66 CGPA",
+    courses: [
       "Data Structures and Algorithms",
       "Operating Systems",
       "Theory of Computation",
@@ -27,21 +26,9 @@ export const EducationList = [
       "Big Data Management",
       "Microprocessor Architecture",
     ],
-    date: "Aug 2018 - Jun 2021",
-    transcript: "https://drive.google.com/file/d/1rgUyZRd_hRCcAQ8Zi1BCk12O1oEhJrTh/view?usp=sharing",
+    date: "Aug 2019 – Jun 2023",
+    transcript:
+      "https://drive.google.com/file/d/1rgUyZRd_hRCcAQ8Zi1BCk12O1oEhJrTh/view?usp=sharing",
   },
-  {
-    title: "Diploma in Computer Technology",
-    college: "MSBTE (Mumbai University)",
-    score: "90.23",
-    courses: [
-      "Object Oriented Programming",
-      "Relational Database Management System",
-      "Linux Programming",
-      "Computer Security",
-      "Computer Graphics",
-    ],
-    date: "Aug 2015 - May 2018",
-    transcript: "",
-  },
+  
 ];

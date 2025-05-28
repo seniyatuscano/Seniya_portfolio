@@ -24,7 +24,7 @@ function Contact() {
         <div className="SectionTitle">Get In Touch</div>
         <ScrollAnimation animateIn="fadeIn">
           <div className="BigCard">
-            {/* First Email */}
+            {/* University Email */}
             <Email>
               <div
                 style={{
@@ -36,11 +36,9 @@ function Contact() {
                   justifyContent: "space-between",
                 }}
               >
-                <span>pkn4111@mavs.uta.edu</span>
+                <span>sxt3855@mavs.uta.edu</span>
                 <Tooltip
-                  PopperProps={{
-                    disablePortal: true,
-                  }}
+                  PopperProps={{ disablePortal: true }}
                   open={copiedEmail === "sxt3855@mavs.uta.edu" && showTooltip}
                   onClose={() => setShowTooltip(false)}
                   title="Copied!"
@@ -63,16 +61,13 @@ function Contact() {
                 href="mailto:sxt3855@mavs.uta.edu"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: "block",
-                  marginTop: "10px", // Space between email and button
-                }}
+                style={{ display: "block", marginTop: "10px" }}
               >
                 Send Email
               </a>
             </Email>
 
-            {/* Second Email */}
+            {/* Personal Email */}
             <Email>
               <div
                 style={{
@@ -86,9 +81,7 @@ function Contact() {
               >
                 <span>seniyatuscano3110@gmail.com</span>
                 <Tooltip
-                  PopperProps={{
-                    disablePortal: true,
-                  }}
+                  PopperProps={{ disablePortal: true }}
                   open={copiedEmail === "seniyatuscano3110@gmail.com" && showTooltip}
                   onClose={() => setShowTooltip(false)}
                   title="Copied!"
@@ -111,10 +104,7 @@ function Contact() {
                 href="mailto:seniyatuscano3110@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: "block",
-                  marginTop: "10px", // Space between email and button
-                }}
+                style={{ display: "block", marginTop: "10px" }}
               >
                 Send Email
               </a>
