@@ -9,6 +9,7 @@ import {
   TechName,
   Technologies,
 } from "./AboutElements";
+
 function About() {
   return (
     <ContactWrapper id="about">
@@ -20,28 +21,28 @@ function About() {
           </ScrollAnimation>
           <div className="AboutBio">
             <ScrollAnimation animateIn="fadeInLeft">
-              Hello, my name is <strong>Prajakta Nisal</strong>, and I am currently pursuing a Master’s in Computer Science at the University of Texas at Arlington, graduating in May 2025. With over two years of experience as a Software Engineer at Deutsche Bank, India, I have a proven track record of developing scalable, high-performance solutions that address complex challenges and drive impactful results.
+              Hi, I’m <strong>Seniya Tuscano</strong> — a passionate software engineer and current Master’s student in Information Systems at the University of Texas at Arlington, graduating in May 2025. I bring hands-on experience across cloud computing, full-stack development, and technical support, built from roles at DWS India, LTIMindtree, and other dynamic tech environments.
             </ScrollAnimation>
 
             <br />
 
             <ScrollAnimation animateIn="fadeInLeft">
-              These days, I am exploring cutting-edge technologies in distributed computing, large-scale system design, and artificial intelligence to design innovative systems that transform user experiences and solve real-world problems. My academic projects and professional experience have strengthened my technical expertise and problem-solving mindset, enabling me to thrive in dynamic and collaborative environments.
+              My current focus lies in distributed systems, cloud architecture, and solving complex engineering problems. I enjoy building impactful solutions and continuously learning new tools and technologies, with a deep interest in platforms like AWS and Azure.
             </ScrollAnimation>
 
             <br />
 
             <ScrollAnimation animateIn="fadeInLeft">
-              I am actively seeking opportunities to grow as an engineer, contributing to innovative projects that challenge the status quo and drive progress. Passionate about continuous learning and teamwork, I am excited to connect with like-minded professionals and work on impactful solutions that make a meaningful difference.<div className="tagline2">
-              
-              I have gained proficiency and confidence in working with the following technologies:
+              Outside of work, I’m an avid traveler and dancer, always looking for new perspectives and experiences. I’m actively seeking full-time roles starting May 2025 where I can grow, contribute, and collaborate with forward-thinking teams to build robust systems and innovative products.
+              <div className="tagline2">
+                Here are some technologies I've worked with:
               </div>
             </ScrollAnimation>
 
             <Technologies>
               {stackList.map((stack, index) => (
                 <ScrollAnimation animateIn="fadeInLeft" key={index}>
-                  <Tech key={index} className="tech">
+                  <Tech className="tech">
                     <TechImg src={stack.img} alt={stack.name} />
                     <TechName>{stack.name}</TechName>
                   </Tech>
