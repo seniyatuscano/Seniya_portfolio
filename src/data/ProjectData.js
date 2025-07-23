@@ -2,100 +2,23 @@
 export const ProjectList = [
   {
     img: "/chat.png",
-    title: "gRPC ChatHub",
-    description: "Developed a real-time, distributed chat application using gRPC, Protocol Buffers, and Docker, supporting one-to-one and broadcast messaging with Go and Python implementations.",
-    tech_stack: ["Golang", "Protocol Buffers", "Docker", "gRPC"],
-    dates: "Jan 2025 - Feb 2025",
+    title: "URL Shortener Prototype",
+    description: "Developed a secure and scalable URL shortening application with React, Express, and MongoDB, reducing URL management time by 50% for 100+ users. Deployed on AWS with Dockerized Spring Boot backend, integrating JWT and OAuth2 for enhanced security.",
+    tech_stack: ["React", "Express", "MongoDB", "NodeJS","AWS"],
+    dates: "March 2025",
     demo_url: "",
-    github_url: "https://github.com/prajaktanisal99/chat_grpc",
+    github_url: "https://github.com/seniyatuscano/URL_Shortener",
   },
   {
     img: "/dynamic_form.jpg",
-    title: "Dynamic JSON-driven Form Generator",
+    title: "Simulation of AHA Ideas ",
     description:
-      "Developed a dynamic form generation tool enabling customizable field creation and real-time validation.",
-    tech_stack: ["JavaScript", "HTML", "CSS", "Vercel"],
+      "Created a 3-tier microservices web application on AWS EC2 with Docker and load balancers, enabling users to create, vote, and comment on innovative ideas. Automated CI/CD pipelines with Jenkins, improving release frequency and deployment stability.",
+    tech_stack: ["React", "Docker", "Jenkins","AWS"],
     dates: "Nov 2024 - Dec 2024",
-    demo_url: "https://dynamic-form-five-jet.vercel.app/",
-    github_url: "https://github.com/prajaktanisal99/dynamicForm",
-  },
-  {
-    img: "/tfidf.png",
-    title: "Custom Search Engine for Historical Texts",
-    description:
-      "Developed a search engine using TF-IDF and cosine similarity, achieving 30% better query accuracy and optimizing document processing for scalable and efficient data retrieval.",
-    tech_stack: ["Python", "Nltk"],
-    dates: "Sep 2024 - Oct 2024",
     demo_url: "",
-    github_url:
-      "https://github.com/prajaktanisal99/custom-search-engine/blob/master/P1.py",
-  },
-  {
-    img: "/renr-responsive.png",
-    title: "Environment Activity Tracking",
-    description:
-      "A full-stack Environment Activity Tracking application with role-based access, JWT authentication, and features for managing activities, volunteer registration, and CRUD operations.",
-    tech_stack: [
-      "ReactJS",
-      "NodeJS",
-      "Express",
-      "RESTful APIs",
-      "JWT Authentication",
-    ],
-    dates: "Aug 2023 - Oct 2023",
-    github_url: "https://github.com/prajaktanisal99/env_activity_tracking",
-    demo_url: "",
-  },
-  {
-    img: "/nba_image.jpg",
-    title: "NBA Position Prediction using MLP Classifier",
-    description:
-      "Developed an MLP classifier to predict NBA player positions, achieving significant accuracy on the training set and optimizing performance through feature selection and cross-validation.",
-    tech_stack: ["Python", "Pandas", "sklearn"],
-    dates: "Aug 2023 - Oct 2023",
-    github_url: "https://github.com/prajaktanisal99/nba_stats/blob/main/MLP.py",
-    demo_url: "",
-  },
-  {
-    img: "/wine_image.png",
-    title:
-      "Wine Clustering Analysis using K-Means and Agglomerative Hierarchical Clustering",
-    description:
-      "Clustering analysis on wine dataset using K-Means and Agglomerative Hierarchical Clustering, evaluated with Silhouette Coefficients, reveals better clustering separation with Complete-Linkage.",
-    tech_stack: ["Python", "Pandas", "sklearn"],
-    demo_url: "",
-    github_url:
-      "https://github.com/prajaktanisal99/wine-data-clustering/blob/main/1002174111.ipynb",
-  },
-  {
-    img: "/nn.png",
-    title:
-      "Hybrid Neural Network Implementation: NumPy and PyTorch Integration",
-    description:
-      "A neural network framework integrating NumPy and PyTorch for a comparative and in-depth understanding of manual versus automated deep learning operations.",
-    tech_stack: ["PyTorch"],
-    demo_url: "",
-    github_url: "https://github.com/prajaktanisal99/neural-networks",
-  },
-  {
-    img: "/snakeAI.png",
-    title: "Snake Agent - Reinforcement Learning",
-    description:
-      "Implemented a deep Q-learning agent to play Snake, utilizing a neural network to predict optimal moves, train from gameplay experiences, and improve through reinforcement learning.",
-    tech_stack: ["Python"],
-    demo_url: "",
-    github_url: "https://github.com/prajaktanisal99/snake_game",
-  },
-  {
-    img: "/connect4.png",
-    title: "Connect 4 - Python Implementation",
-    description:
-      "A Python implementation of a two-player Connect Four game with a custom board, move validation, and winner detection using vertical, horizontal, and diagonal checks.",
-    tech_stack: ["Python"],
-    demo_url: "",
-    github_url:
-      "https://github.com/prajaktanisal99/connect-4/blob/master/manual.py",
-  },
+    github_url: "https://github.com/seniyatuscano/Simulation_of_AHA_Ideas",
+  },  
 ];
 
 // --------------------------------------- Skills
