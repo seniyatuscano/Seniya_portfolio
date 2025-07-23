@@ -17,7 +17,7 @@ export const EducationList = [
   {
     title: "Bachelor of Engineering in Computer Science",
     college: "Fr. Conceicao Rodrigues College of Engineering , Mumbai, India",
-    score: "8.66 CGPA",
+    score: "3.90 CGPA",
     courses: [
       "Data Structures and Algorithms",
       "Operating Systems",
