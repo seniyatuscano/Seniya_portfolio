@@ -24,7 +24,7 @@ function EducationCard() {
                 <span>{list.college}</span>
                 <span>
                   {list.transcript && (
-                    <a href={list.transcript} target="_blank">
+                    <a href={list.transcript} target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faLink} />
                     </a>
                   )}

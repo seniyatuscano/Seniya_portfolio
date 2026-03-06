@@ -84,7 +84,7 @@ function FixSocialIcon() {
           </li>
           <li className="item">
             <a
-              href="#"
+              href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
@@ -94,7 +94,7 @@ function FixSocialIcon() {
           </li>
           <li className="item">
             <a
-              href="#"
+              href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

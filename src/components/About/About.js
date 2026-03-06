@@ -1,13 +1,8 @@
 import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
-import { stackList } from "../../data/ProjectData";
 import {
   ContactWrapper,
   Image,
-  Tech,
-  TechImg,
-  TechName,
-  Technologies,
 } from "./AboutElements";
 
 function About() {
