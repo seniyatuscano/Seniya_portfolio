@@ -2,126 +2,131 @@ import styled, { keyframes } from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 
 export const HeroContainer = styled.div`
-  padding-bottom: 2rem;
-  padding-top: 4rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-right: auto;
-  margin-left: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+  background: var(--primary-bg);
+  position: relative;
+  overflow: hidden;
 
-  @media (min-width: 576px) {
-    max-width: 540px;
-  }
-  @media (min-width: 768px) {
-    max-width: 720px;
-  }
-  @media (min-width: 992px) {
-    max-width: 960px;
-  }
-  @media (min-width: 1200px) {
-    max-width: 1000px;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-purple);
+    filter: blur(150px);
+    top: 10%;
+    right: 10%;
+    z-index: 0;
+    opacity: 0.3;
   }
 `;
 
 export const HeroWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
 
   @media screen and (max-width: 992px) {
     flex-direction: column;
+    text-align: center;
   }
 `;
 
 export const HeroLeft = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  text-align: left;
-  flex: 1;
 
   h1 {
-    font-size: 2.8rem;
-    color: #f6f6f6;
-    opacity: 0.98;
-    font-weight: 400;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #fff 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   h5 {
-    font-size: 1.6rem;
-    color: rgb(119, 119, 121);
-    margin-bottom: 1rem;
-    font-weight: 400;
-  }
-
-  p {
-    font-size: 17px;
-    color: #f6f6f6;
-    opacity: 0.85;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--accent-yellow);
+    margin-bottom: 2rem;
+    font-weight: 500;
   }
 
   @media screen and (max-width: 992px) {
-    text-align: center;
     align-items: center;
-    margin-bottom: 2rem;
-
-    h5 {
-      min-height: 5rem;
+    margin-bottom: 3rem;
   }
 `;
 
 export const HeroRight = styled.div`
   flex: 1;
-  justify-content: center;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media screen and (max-width: 992px) {
+    justify-content: center;
+  }
 `;
 
 export const Image = styled.img`
-  height: 300px;
-  width: auto;
-`;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.4));
+  transition: transform 0.5s ease;
 
-const ScrollAnimation = keyframes`
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
+  &:hover {
+    transform: scale(1.05) rotate(2deg);
   }
 `;
 
 export const ScrollDown = styled(LinkScroll)`
-  display: flex;
-  justify-content: flex-start;
-  cursor: pointer;
   position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s;
 
-  animation: ${ScrollAnimation} 2s linear 0s infinite;
-  @media screen and (max-width: 992px) {
-    position: relative;
-    justify-content: center;
-    margin-top: 2rem;
+  &:hover {
+    color: var(--accent-purple);
   }
 `;
 
 export const ScrollLink = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  font-size: 1.3rem;
-  color: #f6f6f6;
+  gap: 10px;
 
   img {
-    height: 35px;
-    width: 35px;
-    margin-left: 6px;
+    width: 30px;
+    height: 30px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
   }
 `;

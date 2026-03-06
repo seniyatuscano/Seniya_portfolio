@@ -1,28 +1,31 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
-const FooterSection = styled.div`
-  background-image: url(/footer_wave.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 250px;
-  position: relative;
+const FooterSection = styled.footer`
+  padding: 50px 2rem;
+  background: var(--primary-bg);
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+
+  p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
 
   span {
-    position: absolute;
-    bottom: 4rem;
-    color: #fff;
-
-    a {
-      text-decoration: underline;
-    }
+    color: var(--accent-yellow);
+    font-weight: 500;
   }
 `;
+
 function Footer() {
   return (
     <FooterSection>
-      <div className="Container"/>
+      <p>© {new Date().getFullYear()} <span>Seniya Tuscano</span>. Built with passion & modern tech.</p>
     </FooterSection>
   );
 }

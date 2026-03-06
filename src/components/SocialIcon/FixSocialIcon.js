@@ -1,56 +1,62 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import styled from "@emotion/styled";
+import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import styled from "styled-components";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const SocialContainer = styled.div`
   position: fixed;
-  top: 48%;
-  left: 1.5rem;
+  top: 50%;
+  left: 2rem;
   transform: translateY(-50%);
+  z-index: 100;
 
   ul {
-    display: block;
-  }
-
-  .item + .item {
-    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 1rem 0.8rem;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
   a {
-    font-size: 2.3rem;
-    color: rgb(119, 119, 121);
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &:hover {
-      color: rgb(57, 134, 250);
+      color: var(--accent-purple);
+      transform: scale(1.2);
     }
   }
 
   @media screen and (max-width: 1000px) {
-    margin-top: 2rem;
-    position: relative;
-    top: 0;
-    left: 0;
+    position: static;
+    transform: none;
+    margin: 2rem 0;
+    
     ul {
-      display: flex;
+      flex-direction: row;
       justify-content: center;
-      align-items: center;
-      list-style: none;
+      background: transparent;
+      backdrop-filter: none;
+      border: none;
+      box-shadow: none;
     }
-
+    
     a {
-      font-size: 2.5rem;
-      color: #151418;
-      &:hover {
-        color: rgb(57, 134, 250);
-      }
-    }
-
-    .item + .item {
-      margin-top: 0;
-      margin-left: 2rem;
+      font-size: 2rem;
     }
   }
 `;
+
 function FixSocialIcon() {
   return (
     <SocialContainer>
@@ -61,6 +67,7 @@ function FixSocialIcon() {
               href="https://www.linkedin.com/in/seniya-tuscano-503239205/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
               <FaLinkedin />
             </a>
@@ -70,8 +77,29 @@ function FixSocialIcon() {
               href="https://github.com/seniyatuscano"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
               <FaGithub />
+            </a>
+          </li>
+          <li className="item">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <FaTwitter />
+            </a>
+          </li>
+          <li className="item">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
             </a>
           </li>
         </ul>

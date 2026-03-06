@@ -20,98 +20,70 @@ function Contact() {
 
   return (
     <ContactWrapper id="contact">
-      <div className="Container">
-        <div className="SectionTitle">Get In Touch</div>
-        <ScrollAnimation animateIn="fadeIn">
-          <div className="BigCard">
-            {/* University Email */}
-            <Email>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  columnGap: "20px",
-                  rowGap: "10px",
-                  flexWrap: "wrap",
-                  justifyContent: "space-between",
-                }}
+      <ScrollAnimation animateIn="fadeIn">
+        <h2>Get In Touch</h2>
+        <div className="BigCard">
+          {/* University Email */}
+          <Email>
+            <span>sxt3855@mavs.uta.edu</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <Tooltip
+                PopperProps={{ disablePortal: true }}
+                open={copiedEmail === "sxt3855@mavs.uta.edu" && showTooltip}
+                onClose={() => setShowTooltip(false)}
+                title="Copied!"
+                TransitionComponent={Zoom}
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
+                placement="top"
               >
-                <span>sxt3855@mavs.uta.edu</span>
-                <Tooltip
-                  PopperProps={{ disablePortal: true }}
-                  open={copiedEmail === "sxt3855@mavs.uta.edu" && showTooltip}
-                  onClose={() => setShowTooltip(false)}
-                  title="Copied!"
-                  TransitionComponent={Zoom}
-                  disableFocusListener
-                  disableHoverListener
-                  disableTouchListener
-                  placement="bottom"
-                >
-                  <IconButton onClick={() => copyToClipboard("sxt3855@mavs.uta.edu")}>
-                    <MdContentCopy
-                      size={25}
-                      style={{ cursor: "pointer", color: "#151418" }}
-                    />
-                  </IconButton>
-                </Tooltip>
-              </div>
+                <IconButton onClick={() => copyToClipboard("sxt3855@mavs.uta.edu")}>
+                  <MdContentCopy size={22} style={{ color: "var(--accent-purple)" }} />
+                </IconButton>
+              </Tooltip>
               <a
-                className="btn PrimaryBtn btn-shadow"
+                className="btn PrimaryBtn"
                 href="mailto:sxt3855@mavs.uta.edu"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "block", marginTop: "10px" }}
               >
                 Send Email
               </a>
-            </Email>
+            </div>
+          </Email>
 
-            {/* Personal Email */}
-            <Email>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  columnGap: "20px",
-                  rowGap: "10px",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                }}
+          {/* Personal Email */}
+          <Email>
+            <span>seniyatuscano3110@gmail.com</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <Tooltip
+                PopperProps={{ disablePortal: true }}
+                open={copiedEmail === "seniyatuscano3110@gmail.com" && showTooltip}
+                onClose={() => setShowTooltip(false)}
+                title="Copied!"
+                TransitionComponent={Zoom}
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
+                placement="top"
               >
-                <span>seniyatuscano3110@gmail.com</span>
-                <Tooltip
-                  PopperProps={{ disablePortal: true }}
-                  open={copiedEmail === "seniyatuscano3110@gmail.com" && showTooltip}
-                  onClose={() => setShowTooltip(false)}
-                  title="Copied!"
-                  TransitionComponent={Zoom}
-                  disableFocusListener
-                  disableHoverListener
-                  disableTouchListener
-                  placement="bottom"
-                >
-                  <IconButton onClick={() => copyToClipboard("seniyatuscano3110@gmail.com")}>
-                    <MdContentCopy
-                      size={25}
-                      style={{ cursor: "pointer", color: "#151418" }}
-                    />
-                  </IconButton>
-                </Tooltip>
-              </div>
+                <IconButton onClick={() => copyToClipboard("seniyatuscano3110@gmail.com")}>
+                  <MdContentCopy size={22} style={{ color: "var(--accent-purple)" }} />
+                </IconButton>
+              </Tooltip>
               <a
-                className="btn PrimaryBtn btn-shadow"
+                className="btn PrimaryBtn"
                 href="mailto:seniyatuscano3110@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "block", marginTop: "10px" }}
               >
                 Send Email
               </a>
-            </Email>
-          </div>
-        </ScrollAnimation>
-      </div>
+            </div>
+          </Email>
+        </div>
+      </ScrollAnimation>
     </ContactWrapper>
   );
 }

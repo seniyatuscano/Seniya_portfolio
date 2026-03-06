@@ -1,90 +1,140 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
-// Card styling: Enhanced padding, shadow, and width control
-export const Card = styled.div`
+export const TimelineContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3% 4%;
-  margin-bottom: 2rem;
-  border-radius: 15px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1), 0px 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
   width: 100%;
-  background-color: #fff;
-  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
 
-  @media (min-width: 992px) {
-    flex-direction: row;
-    padding: 2% 4%;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-purple), var(--accent-yellow));
+    box-shadow: 0 0 15px var(--accent-purple);
+    z-index: 0;
+
+    @media screen and (max-width: 768px) {
+      left: 30px;
+    }
   }
 `;
 
-// Styling for the courses container
-export const ContributionsContainer = styled.div`
+export const TimelineItem = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-bottom: 1.5rem;
+  justify-content: ${props => props.index % 2 === 0 ? 'flex-start' : 'flex-end'};
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+    padding-left: 60px;
+  }
 `;
 
-// Individual course card style
-export const ContributionsCard = styled.li`
-  padding: 7px 14px;
-  margin: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.7);
-  cursor: default;
-  box-shadow: 0px 2px 6px rgba(160, 170, 180, 0.3);
-  transition: all 0.3s ease;
+export const TimelineDot = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--primary-bg);
+  border: 4px solid var(--accent-yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-yellow);
+  z-index: 2;
+
+  @media screen and (max-width: 768px) {
+    left: 30px;
+  }
+`;
+
+export const Card = styled.div`
+  width: 45%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-color: #e5e5e5;
-    box-shadow: 0px 4px 10px rgba(160, 170, 180, 0.5);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
 
-// Details section container (score, date)
-export const DetailsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 300;
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  color: rgba(0, 0, 0, 0.5);
-  background-color: #fafafa;
-  border-radius: 10px;
+export const DateLabel = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  text-align: ${props => props.index % 2 === 0 ? 'left' : 'right'};
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 2rem;
+  ${props => props.index % 2 === 0 ? 'right: 0;' : 'left: 0;'}
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    top: 0;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--accent-yellow);
+  }
 `;
 
-// Degree and college name section container
-export const DegreeInfoContainer = styled.div`
+export const DegreeTitle = styled.h4`
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+`;
+
+export const CollegeName = styled.p`
+  font-size: 1rem;
+  color: var(--accent-purple);
+  margin-bottom: 1rem;
+  font-weight: 600;
+`;
+
+export const ContributionsContainer = styled.ul`
+  list-style: none;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  width: 100%;
+  gap: 0.5rem;
 `;
 
-// Degree title styling
-export const DegreeTitle = styled.h4`
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.9);
-  margin-bottom: 5px;
-`;
+export const ContributionsCard = styled.li`
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.2rem;
 
-// College name styling
-export const CollegeName = styled.p`
-  font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.7);
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  &::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-yellow);
+  }
 `;

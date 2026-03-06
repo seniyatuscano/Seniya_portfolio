@@ -7,17 +7,20 @@ import Experience from "../components/Experience/Experience";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects";
+import TechStack from "../components/TechStack/TechStack";
 import FixSocialIcon from "../components/SocialIcon/FixSocialIcon";
 import ScrollToTop from "../components/SocialIcon/ScrollToTop";
+
 function Home() {
   return (
     <>
       <Hero />
-      <Projects />
+      <About />
+      <TechStack />
       <Experience />
+      <Projects />
       <Education />
       <Achievements />
-      <About />
       <Contact />
       <FixSocialIcon />
       <Footer />
