@@ -1,49 +1,65 @@
-import { IconButton, Tooltip, styled } from '@mui/material'
-import React, { useState, useEffect } from 'react'
-import { MdKeyboardArrowUp } from 'react-icons/md';
-import { animateScroll as scroll } from 'react-scroll';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { FiArrowUp } from "react-icons/fi";
+import { animateScroll as scroll } from "react-scroll";
 
-const StyledIconButton = styled(IconButton)`
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: white;
-    padding: 10px;
-`
+const FloatingButton = styled.button`
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--background-card);
+  border: 1px solid var(--rule);
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  z-index: 900;
+  box-shadow: 0 4px 16px rgba(8, 9, 9, 0.12);
+  transition: all var(--dur-short) var(--ease-out);
+  opacity: ${(props) => (props.visible ? "1" : "0")};
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
+  transform: ${(props) => (props.visible ? "translateY(0)" : "translateY(10px)")};
 
-const StyledArrowIcon = styled(MdKeyboardArrowUp)`
-    background-color: #007bff;
-    border-radius: 50%;
-    padding: 5px;
-    box-shadow: 0px 4px 20px rgba(160, 170, 180, 0.6);
-`
+  &:hover {
+    border-color: var(--foreground);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(8, 9, 9, 0.18);
+  }
+`;
 
-function ScrollToTop() {
-    const [open, setOpen] = React.useState(false);
-    const [shouldRender, setShouldRender] = useState(false);
+const ScrollToTop = () => {
+  const [visible, setVisible] = useState(false);
 
-    const handleClick = () => {
-        setOpen(false);
-        scroll.scrollToTop({ duration: 0 });
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
     };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollThreshold = 500;
-            if (window.scrollY > scrollThreshold) setShouldRender(true)
-            else setShouldRender(false);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-    }, []);
+  const handleClick = () => {
+    scroll.scrollToTop({ duration: 400 });
+  };
 
-    return (
-        shouldRender &&
-        <Tooltip title='Scroll to top' placement='top' open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)}>
-            <StyledIconButton size='large' aria-label='scroll to top' onClick={handleClick} >
-                <StyledArrowIcon fontSize={40} />
-            </StyledIconButton>
-        </Tooltip>
-    )
-}
+  return (
+    <FloatingButton
+      type="button"
+      visible={visible}
+      onClick={handleClick}
+      aria-label="Scroll back to top"
+    >
+      <FiArrowUp />
+    </FloatingButton>
+  );
+};
 
-export default ScrollToTop
+export default ScrollToTop;

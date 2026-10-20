@@ -1,8 +1,11 @@
 {
   "name": "portfolio-react",
-  "homepage": "https://prajaktanisal99.github.io",
+  "homepage": "https://seniyatuscano.github.io",
   "version": "0.1.0",
   "private": true,
+  "overrides": {
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.5"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",

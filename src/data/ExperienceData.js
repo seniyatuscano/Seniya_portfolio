@@ -1,15 +1,37 @@
 export const ExperienceList = [
   {
-    title: "Software Engineering Intern",
-    organization: "BA Diversity Inc. Media (New York, NY – Remote)",
+    title: "Software Engineer (DevSecOps)",
+    organization: "Saayam for All (Remote)",
     contributions: [
-      "Developed an AI Scheduler tool using Python and Flask that automated team task allocations based on priority, availability, and deadlines — increasing task completion efficiency by 45% across departments.",
-      "Built a modular frontend using Tailwind CSS and PHP, integrating REST APIs to make the scheduler interactive, secure, and mobile-responsive.",
-      "Migrated 8 websites with over 600 articles from WordPress to DigitalOcean, optimizing infrastructure using NGINX, Cloudflare CDN, and DNS configurations, resulting in 40% less downtime.",
-      "Deployed CI/CD pipelines with GitHub Actions to automate deployments and testing workflows, cutting manual effort by 60%.",
-      "Monitored and maintained 99.9% server uptime using UptimeRobot, SSH diagnostics, and error log analysis, while resolving post-migration server issues.",
+      "Authored Terraform IaC (S3 state, DynamoDB locking) for least-privilege IAM, cutting onboarding 45 to 9 min",
+      "Moved long-lived keys to AWS Secrets Manager (90-day rotation, RBAC), purging .env keys for 10 devs",
+      "Built a boto3 CLI deviamsetup.py validating Secrets Manager creds via STS, cutting SDK auth from 30 to 15 min",
+      "Gated every PR via GitHub Actions CI/CD on Flake8 and pytest, catching 30+ violations pre-merge for 12 devs",
+      "Scoped project IAM roles (S3 upload-only) with docs, enabling 8 backend devs on Volunteer Microservice",
     ],
-    date: "Jan 2025 – Apr 2025",
+    date: "August 2026 – Present",
+  },
+  {
+    title: "IT Assistant",
+    organization: "HBS 2026 LLC (FIFA World Cup 2026) (Dallas, TX)",
+    contributions: [
+      "Provisioned and Entra ID-joined 100+ workstations for broadcast staff pre-tournament, zero day-one failures",
+      "Resolved 300+ Tier 1/2 tickets across Windows, Meraki LAN/WAN and VoIP at 95% SLA during live broadcasts",
+      "Sustained 99% LAN/WAN uptime by monitoring Meraki networks, VoIP & A/V conferencing for 100+ hub users",
+      "Audited IT hardware via cycle counts to 99% accuracy and managed Azure AD credentials for 100+ hub users",
+    ],
+    date: "March 2026 – July 2026",
+  },
+  {
+    title: "Software Engineer Intern",
+    organization: "Media Stream AI (New York, NY)",
+    contributions: [
+      "Architected Flask + Celery/Redis microservice for async task scheduling, cutting p95 job processing from 11s to 6s",
+      "Migrated 120 GB MongoDB from AWS EC2 to Azure Cosmos DB via DMS dual-write, 99.9% uptime",
+      "Implemented Azure RBAC, Entra ID Conditional Access and Sentinel KQL rules, cutting critical incidents 40%",
+      "Automated GitHub Actions CI/CD (pytest, Docker caching), Datadog monitors, cutting deploy 25 to 10 min",
+    ],
+    date: "January 2025 – June 2025",
   },
   {
     title: "Software Engineer",
@@ -22,5 +44,4 @@ export const ExperienceList = [
     ],
     date: "Jun 2023 – Nov 2023",
   },
-
 ];

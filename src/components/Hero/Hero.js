@@ -1,92 +1,91 @@
-import React, { useState } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
-import { TypeAnimation } from "react-type-animation";
-import Dropdown from "../Dropdown/Dropdown";
-import Header from "../Header/Header";
-import {
-  HeroContainer,
-  HeroLeft,
-  HeroRight,
-  HeroWrapper,
-  Image,
-  ScrollDown,
-  ScrollLink,
-} from "./HeroElements";
+import React from "react";
+import FooterBackground from "./FooterBackground";
+import BrandLogo from "./BrandLogo";
+import { scroller } from "react-scroll";
 
-function Hero() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showSubtitle, setShowSubtitle] = useState(false);
-  const [showScrollDown, setShowScrollDown] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
+const Hero = () => {
+  const scrollTo = (target) => {
+    scroller.scrollTo(target, {
+      smooth: true,
+      duration: 400,
+      offset: -90,
+    });
   };
 
   return (
-    <main>
-      <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Header toggle={toggle} />
-      <HeroContainer>
-        <HeroWrapper>
-          <HeroLeft>
-            <ScrollAnimation animateIn="fadeIn">
-              <TypeAnimation
-                cursor={false}
-                sequence={["Hi, I'm Seniya Tuscano.", () => setShowSubtitle(true)]}
-                speed={{ type: "keyStrokeDelayInMs", value: 150 }}
-                wrapper="h1"
-                repeat={0}
-              />
-              {showSubtitle && (
-                <TypeAnimation
-                  cursor={true}
-                  sequence={[
-                    500,
-                    "A Cloud Enthusiast.",
-                    500,
-                    "A Full-Stack Developer.",
-                    500,
-                    "An AWS & Azure Explorer.",
-                    500,
-                    "A Data-Driven Thinker.",
-                    500,
-                    "A Creative Problem Solver.",
-                    500,
-                    "A Curious Learner.",
-                    500,
-                    "Building solutions that matter.",
-                    500,
-                    "Scroll down to see what I’ve built...",
-                    300,
-                    () => setShowScrollDown(true),
-                  ]}
-                  speed={50}
-                  deletionSpeed={65}
-                  wrapper="h5"
-                  repeat={Infinity}
-                />
-              )}
-            </ScrollAnimation>
-          </HeroLeft>
-          <HeroRight>
-            <ScrollAnimation animateIn="fadeIn">
-              <Image src="/appleProfile.png" alt="profilePicture" />
-            </ScrollAnimation>
-          </HeroRight>
-        </HeroWrapper>
-        {showScrollDown && (
-          <ScrollAnimation animateIn="flipInX" offset={0}>
-            <ScrollDown to="projects" id="scrollDown">
-              <ScrollLink>
-                Scroll down
-                <img src="/scroll-down.svg" alt="scroll-down" />
-              </ScrollLink>
-            </ScrollDown>
-          </ScrollAnimation>
-        )}
-      </HeroContainer>
-    </main>
+    <div className="footer" id="hero" aria-label="Hero and Studio Stage">
+      <FooterBackground />
+
+      <div className="jobs">
+        <span className="tag">software &amp; ai engineer</span>
+        <span className="headline job-title">
+          software
+          <br />
+          meets applied ai
+        </span>
+        <div className="footer-nav">
+          <span onClick={() => scrollTo("experience")} style={{ cursor: "pointer" }}>
+            Experience
+          </span>
+          <span onClick={() => scrollTo("techstack")} style={{ cursor: "pointer" }}>
+            In the lab
+          </span>
+          <span onClick={() => scrollTo("projects")} style={{ cursor: "pointer" }}>
+            Projects
+          </span>
+          <span onClick={() => scrollTo("contact")} style={{ cursor: "pointer" }}>
+            Say hey
+          </span>
+        </div>
+      </div>
+
+      <div className="logo" role="img" aria-label="Seniya Tuscano logo">
+        <BrandLogo />
+      </div>
+
+      <div className="contact">
+        <span className="tag">open for opportunities</span>
+        <div className="headline contact-links">
+          <span>actively seeking</span>
+          <span>full-time roles*</span>
+        </div>
+        <p className="note">*ms in information systems @ ut arlington (3.78 gpa) · open for software, cloud &amp; ai roles.</p>
+        <div className="socials">
+          <span aria-label="GitHub">
+            <a
+              href="https://github.com/seniyatuscano"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%", color: "inherit" }}
+            >
+              <img src="/github.svg" alt="" width="35" height="35" />
+            </a>
+          </span>
+          <span aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/seniya-tuscano/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%", color: "inherit" }}
+            >
+              <img src="/linkedin.svg" alt="" width="35" height="35" />
+            </a>
+          </span>
+          <span aria-label="Email">
+            <a
+              href="mailto:seniyatuscano3110@gmail.com"
+              aria-label="Send Personal Email"
+              style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%", color: "inherit" }}
+            >
+              <img src="/mail.svg" alt="" width="35" height="35" />
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Hero;

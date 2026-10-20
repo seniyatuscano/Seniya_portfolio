@@ -1,111 +1,79 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
 import styled from "styled-components";
-import ScrollAnimation from "react-animate-on-scroll";
 
-const SocialContainer = styled.div`
+const SocialRail = styled.div`
   position: fixed;
-  top: 50%;
-  left: 2rem;
-  transform: translateY(-50%);
+  bottom: 32px;
+  left: 28px;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    list-style: none;
-    padding: 1rem 0.8rem;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  @media (max-width: 1100px) {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    width: 1px;
+    height: 48px;
+    background: var(--rule);
+    margin-top: 4px;
   }
 
   a {
-    font-size: 1.6rem;
-    color: var(--text-secondary);
-    transition: 0.3s;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--background-card);
+    border: 1px solid var(--rule);
+    color: var(--foreground-muted);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(8, 9, 9, 0.04);
+    transition: all var(--dur-short) var(--ease-out);
 
     &:hover {
-      color: var(--accent-purple);
-      transform: scale(1.2);
-    }
-  }
-
-  @media screen and (max-width: 1000px) {
-    position: static;
-    transform: none;
-    margin: 2rem 0;
-    
-    ul {
-      flex-direction: row;
-      justify-content: center;
-      background: transparent;
-      backdrop-filter: none;
-      border: none;
-      box-shadow: none;
-    }
-    
-    a {
-      font-size: 2rem;
+      border-color: var(--foreground);
+      color: var(--foreground);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(8, 9, 9, 0.08);
     }
   }
 `;
 
-function FixSocialIcon() {
+const FixSocialIcon = () => {
   return (
-    <SocialContainer>
-      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-        <ul>
-          <li className="item">
-            <a
-              href="https://www.linkedin.com/in/seniya-tuscano-503239205/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
-            </a>
-          </li>
-          <li className="item">
-            <a
-              href="https://github.com/seniyatuscano"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </a>
-          </li>
-          <li className="item">
-            <a
-              href="https://x.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
-            </a>
-          </li>
-          <li className="item">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
-          </li>
-        </ul>
-      </ScrollAnimation>
-    </SocialContainer>
+    <SocialRail aria-label="Social navigation">
+      <a
+        href="https://github.com/seniyatuscano"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub Profile"
+      >
+        <FiGithub />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/seniya-tuscano/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn Profile"
+      >
+        <FiLinkedin />
+      </a>
+      <a
+        href="mailto:seniyatuscano3110@gmail.com"
+        aria-label="Send Personal Email"
+      >
+        <FiMail />
+      </a>
+    </SocialRail>
   );
-}
+};
 
 export default FixSocialIcon;

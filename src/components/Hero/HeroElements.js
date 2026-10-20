@@ -1,132 +1,173 @@
 import styled from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 
-export const HeroContainer = styled.div`
+/* Hallmark · hero: H5 Terminal / Split Preview · macrostructure: Workbench · theme: Obsidian-Cyan */
+export const HeroSection = styled.section`
+  min-height: 94vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 0 2rem;
-  background: var(--primary-bg);
+  justify-content: center;
+  padding: 130px 24px 80px;
   position: relative;
   overflow: hidden;
+  background: var(--color-paper);
 
-  &::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: var(--accent-purple);
-    filter: blur(150px);
-    top: 10%;
-    right: 10%;
-    z-index: 0;
-    opacity: 0.3;
+  @media (max-width: 768px) {
+    padding: 110px 16px 60px;
+    min-height: auto;
   }
 `;
 
-export const HeroWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+export const HeroGrid = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 48px;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
   z-index: 1;
 
-  @media screen and (max-width: 992px) {
-    flex-direction: column;
-    text-align: center;
+  @media (max-width: 992px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
   }
 `;
 
-export const HeroLeft = styled.div`
-  flex: 1;
+export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, #fff 0%, var(--text-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  h5 {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: var(--accent-yellow);
-    margin-bottom: 2rem;
-    font-weight: 500;
-  }
-
-  @media screen and (max-width: 992px) {
-    align-items: center;
-    margin-bottom: 3rem;
-  }
+  gap: 20px;
 `;
 
-export const HeroRight = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+export const StatusBadge = styled.div`
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-ink-2);
 
-  @media screen and (max-width: 992px) {
-    justify-content: center;
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-success);
+    box-shadow: 0 0 10px var(--color-success);
   }
 `;
 
-export const Image = styled.img`
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.4));
-  transition: transform 0.5s ease;
+export const HeroTitle = styled.h1`
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
 
-  &:hover {
-    transform: scale(1.05) rotate(2deg);
+  span.highlight {
+    color: var(--color-accent);
   }
 `;
 
-export const ScrollDown = styled(LinkScroll)`
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+export const HeroDescription = styled.p`
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--color-ink-2);
+  max-width: 580px;
+`;
+
+export const ActionGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+`;
+
+export const PrimaryAction = styled(LinkScroll)`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: 0.3s;
+  transition: all var(--dur-short) var(--ease-out);
 
   &:hover {
-    color: var(--accent-purple);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--color-accent-dim);
   }
 `;
 
-export const ScrollLink = styled.div`
+export const SecondaryAction = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  color: var(--color-ink);
+  font-weight: 500;
+  font-size: 0.92rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--dur-short) var(--ease-out);
+
+  &:hover {
+    border-color: var(--color-rule-active);
+    background: var(--color-paper-3);
+    color: var(--color-accent);
+    transform: translateY(-1px);
+  }
+`;
+
+export const MetricsBar = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-rule);
+  width: 100%;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    gap: 18px;
+  }
+`;
+
+export const MetricItem = styled.div`
   display: flex;
   flex-direction: column;
+
+  .val {
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+  }
+
+  .label {
+    font-size: 0.78rem;
+    color: var(--color-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+`;
+
+export const HeroVisual = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-
-  img {
-    width: 30px;
-    height: 30px;
-    animation: bounce 2s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-10px);}
-    60% {transform: translateY(-5px);}
-  }
 `;
